@@ -1,0 +1,48 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-25-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+                <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                </svg>
+                <span class="slds-assistive-text">Cancel and close</span>
+            </button>
+
+            <div class="slds-modal__header">
+                <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Article</h1>
+            </div>
+            
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <h1>{selectedArticleTitle}</h1>
+                <p>{ansFieldValue}</p>    
+                </br> 
+                <template for:each={filesList} for:item="file">
+                  <div key={file.value} class="slds-box">
+                      <div class="slds-grid slds-wrap">
+                          <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_12-of-12">
+                            <p><strong>FileName - </strong>{file.label}</p>
+                          </div>
+                          <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                            <a href={file.url} download>Download</a>
+                          </div>
+                        </div>
+                  </div>
+              </template>
+            
+          </div>
+            <div class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" aria-label="Cancel and close" onclick={handleCancel}>Cancel</button>&nbsp;&nbsp;&nbsp;
+                <!-- <lightning-button label = "Generate Attachments" variant="brand" onclick={generateattachments}></lightning-button> -->
+                <!-- <lightning-button label = "Send Email" variant="brand" onclick={sendEmail}></lightning-button>    -->
+            </div>
+        </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+</template>
