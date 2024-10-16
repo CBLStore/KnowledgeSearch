@@ -1,4 +1,4 @@
-#Knowledge Search For Experience Site and FSL Mobile App
+# Knowledge Search For Experience Site and FSL Mobile App
 
 Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
 
